@@ -1,4 +1,4 @@
-package com.arincatlamaz.countryinfo
+package com.arincatlamaz.countryinfo.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.arincatlamaz.countryinfo.R
 import com.arincatlamaz.countryinfo.databinding.FragmentFeedBinding
 
 class FeedFragment : Fragment() {
@@ -21,9 +22,7 @@ class FeedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.button.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.action_feedFragment_to_countryFragment)
-        }
+
         super.onViewCreated(view, savedInstanceState)
     }
 
