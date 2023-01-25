@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
     id("androidx.navigation.safeargs")
 }
 
@@ -10,9 +11,10 @@ android {
     compileSdk 33
 
 
-    dataBinding {
-        enabled true
+    dataBinding{
+        enabled = true
     }
+
 
     defaultConfig {
         applicationId "com.arincatlamaz.countryinfo"
