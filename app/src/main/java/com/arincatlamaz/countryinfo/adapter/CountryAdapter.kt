@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.arincatlamaz.countryinfo.R
 import com.arincatlamaz.countryinfo.databinding.ItemCountryBinding
 import com.arincatlamaz.countryinfo.model.Country
 import com.arincatlamaz.countryinfo.util.downloadFromUrl
 import com.arincatlamaz.countryinfo.util.placeholderProgressBar
-import com.arincatlamaz.countryinfo.view.FeedFragment
+import com.arincatlamaz.countryinfo.view.FeedFragmentDirections
 
 class CountryAdapter(val countryList : ArrayList<Country>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
@@ -30,7 +29,8 @@ class CountryAdapter(val countryList : ArrayList<Country>) : RecyclerView.Adapte
         holder.binding.name.text = countryList[position].countryName
         holder.binding.region.text = countryList[position].countryRegion
         holder.itemView.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_feedFragment_to_countryFragment)
+            val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment(countryList[position].uuid)
+            Navigation.findNavController(it).navigate(action)
         }
         holder.binding.imageView.downloadFromUrl(countryList[position].imageUrl,
             placeholderProgressBar(holder.binding.root.context)

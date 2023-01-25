@@ -11,7 +11,7 @@
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
-            android:id="@+id/action_feedFragment_to_countryFragment"
+            android:id="@+id/actionFeedFragmentToCountryFragment"
             app:destination="@id/countryFragment" />
     </fragment>
     <fragment
@@ -23,7 +23,6 @@
             android:id="@+id/action_countryFragment_to_feedFragment2"
             app:destination="@id/feedFragment" />
         <argument
-            android:defaultValue="0"
             android:name="countryUuid"
             app:argType="integer" />
     </fragment>
