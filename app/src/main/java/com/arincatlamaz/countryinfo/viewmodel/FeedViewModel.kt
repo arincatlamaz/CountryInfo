@@ -45,7 +45,6 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
         launch {
             val countries = CountryDatabase(getApplication()).countryDao().getAllCountries()
             showCountries(countries)
-            Toast.makeText(getApplication(),"Countries From SQLite",Toast.LENGTH_LONG).show()
         }
     }
 
@@ -59,7 +58,6 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<List<Country>>(){
                     override fun onSuccess(t: List<Country>) {
                         storeInSQLite(t)
-                        Toast.makeText(getApplication(),"Countries From API",Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {
